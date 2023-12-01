@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="form-group row">
+        <label for="{{ form.car.id_for_label }}" class="col-sm-2 col-form-label">{{ form.car.label }}</label>
+        <div class="col-sm-10">
+            {{ form.car }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="{{ form.work.id_for_label }}" class="col-sm-2 col-form-label">{{ form.work.label }}</label>
+        <div class="col-sm-10">
+            {{ form.work }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="{{ form.after_work.id_for_label }}" class="col-sm-2 col-form-label">{{ form.after_work.label }}</label>
+        <div class="col-sm-10">
+            {{ form.after_work }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="{{ form.estimate.id_for_label }}" class="col-sm-2 col-form-label">{{ form.estimate.label }}</label>
+        <div class="col-sm-10">
+            {{ form.estimate }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="{{ form.Final_cost.id_for_label }}" class="col-sm-2 col-form-label">{{ form.Final_cost.label }}</label>
+        <div class="col-sm-10">
+            {{ form.Final_cost }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="{{ form.remarks.id_for_label }}" class="col-sm-2 col-form-label">{{ form.remarks.label }}</label>
+        <div class="col-sm-10">
+            {{ form.remarks }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+{% endblock body %}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<title>Revive login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+<link rel="shortcut icon" href="{% static 'img/favicon.jpg' %}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'ums vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'ums fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'ums fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'ums vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'ums vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'ums vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'ums vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'ums vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'ums css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'ums css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<style>
+	.container-login100 {
+		background: url("{% static 'img/herooo.png' %}") no-repeat center center fixed;
+		background-size: cover;
+		opacity: 100; /* Adjust the opacity value as needed */
+	}
+</style>
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<span class="login100-form-title p-b-48">
+					<img src="{% static 'img/logo (2).jpg' %}" style="height:120px;margin-left:0px;">
+				</span>
+				<span class="login100-form-title p-b-26">
+					Sign In
+					<p>Use your account credentials.</p>
+				</span>
+				<form method="POST" action="{% url 'UMS:login' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" name="email" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" id="password" name="password" required>
+					</div><br>
+					<button type="submit" class="btn btn-primary">Login</button>
+				</form>
+				<div class="text-center p-t-115">
+					<span class="txt1">
+						Don’t have an account?
+					</span>
+
+					<a class="txt2" href="#">
+						Sign Up
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="{% static 'ums vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'ums vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'ums vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'ums vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'ums vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'ums vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'ums vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'ums vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'ums js/main.js' %}"></script>
+
+</body>
+</html>

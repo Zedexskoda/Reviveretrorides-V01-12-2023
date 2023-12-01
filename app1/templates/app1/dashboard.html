@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Car Entry</h5>
+            <a href="{% url "app1:car_added" %}" class="btn btn-primary">Car Data</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Car Modified</h5>
+            <a href="{% url "app1:carmod_view" %}" class="btn btn-primary">Modifications</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Settlement</h5>
+            <a href="{% url "app1:final_settlement_table" %}" class="btn btn-primary">Modifications</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+{% endblock content %}
+{% endblock body %}

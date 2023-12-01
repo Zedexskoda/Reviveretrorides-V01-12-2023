@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="car">Car</label>
+        <select class="form-control" id="car" name="car" required>
+            <option value="">Select Car</option>
+            {% for car in cars %}
+                <option value="{{ car.id }}">{{ car.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="car_model">Car Model</label>
+        <select class="form-control" id="car_model" name="car_model" required>
+            <option value="">Select Car Model</option>
+            {% for model in models %}
+                <option value="{{ model.id }}">{{ model.models }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="year">Year</label>
+        <input type="number" class="form-control" id="year" name="year" required>
+    </div>
+    <div class="form-group">
+        <label for="registration_no">Registration Number</label>
+        <input type="text" class="form-control" id="registration_no" name="registration_no" required>
+    </div>
+    <div class="form-group">
+        <label for="chassis_no">Chassis Number</label>
+        <input type="text" class="form-control" id="chassis_no" name="chassis_no" required>
+    </div>
+    <div class="form-group">
+        <label for="engine_no">Engine Number</label>
+        <input type="text" class="form-control" id="engine_no" name="engine_no" required>
+    </div>
+    <div class="form-group">
+        <label for="owner_name">Owner Name</label>
+        <input type="text" class="form-control" id="owner_name" name="owner_name" required>
+    </div>
+    <div class="form-group">
+        <label for="manufacturing_year">Manufacturing Year</label>
+        <input type="number" class="form-control" id="manufacturing_year" name="manufacturing_year" required>
+    </div>
+    <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" name="state" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock content %}
+{% endblock body %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+{% block content %}
+<div style="margin-left:-380px;"class="row justify-content-center mt-3">
+    <div class="col-md-6">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search by Car Name" aria-label="Search" name="q">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>Car</th>
+                <th>Car Model</th>
+                <th>Work</th>
+                <th>Before Image</th>
+                <th>Estimate</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in mod %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ i.car }}</td>
+                    <td>{{ i.car.car_model }}</td>
+                    <td>{{ i.work }}</td>
+                    <td>
+                        <a href="{{ i.before_work.url }}">Before Work</a>
+                    </td>
+                    <td>₹ {{ i.estimate }}</td>
+                    <td>{{ i.remarks }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
+{% endblock body %}

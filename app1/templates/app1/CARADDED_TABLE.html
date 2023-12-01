@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+{% block content %}
+<div style="margin-left:-380px;"class="row justify-content-center mt-3">
+    <div class="col-md-6">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search by Car Name" aria-label="Search" name="q">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>Car</th>
+                <th>Car Model</th>
+                <th>Year</th>
+                <th>Registration Number</th>
+                <th>Chassis Number</th>
+                <th>Engine Number</th>
+                <th>Owner Name</th>
+                <th>Manufacturing Year</th>
+                <th>State</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for detail in all_details %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ detail.car.name }}</td>
+                    <td>{{ detail.car_model }}</td>
+                    <td>{{ detail.year }}</td>
+                    <td>{{ detail.registration_no }}</td>
+                    <td>{{ detail.chassis_no }}</td>
+                    <td>{{ detail.engine_no }}</td>
+                    <td>{{ detail.owner_name }}</td>
+                    <td>{{ detail.manufacturing_year }}</td>
+                    <td>{{ detail.state }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
+{% endblock body %}
